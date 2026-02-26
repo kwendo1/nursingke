@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EduGlobal · short courses, world career</title>
+  <!-- Google Font & Font Awesome -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #fbfdff;
+      color: #1e2b37;
+      line-height: 1.5;
+    }
+
+    /* color palette */
+    :root {
+      --deep-navy: #0b2b40;
+      --teal-bright: #1ebea5;
+      --slate-light: #f0f6fa;
+      --white-soft: #ffffff;
+      --gray-mild: #5f6c7a;
+      --border-light: #dce5ec;
+      --placeholder-bg: #e6edf4;
+      --placeholder-icon: #7f8d9c;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    /* header */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+      flex-wrap: wrap;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .logo {
+      font-size: 1.9rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      color: var(--deep-navy);
+    }
+    .logo span {
+      color: var(--teal-bright);
+      font-weight: 600;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 40px;
+      font-weight: 500;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--deep-navy);
+      transition: color 0.2s;
+    }
+    .nav-links a:hover {
+      color: var(--teal-bright);
+    }
+
+    /* buttons */
+    .btn {
+      display: inline-block;
+      background-color: var(--teal-bright);
+      color: #0a2a2a;
+      font-weight: 600;
+      padding: 12px 32px;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: 0.2s;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 8px 16px -8px rgba(30,190,165,0.3);
+    }
+    .btn:hover {
+      background-color: #179e88;
+      transform: translateY(-2px);
+      box-shadow: 0 16px 24px -8px rgba(30,190,165,0.4);
+    }
+    .btn-outline {
+      background: transparent;
+      border: 2px solid var(--teal-bright);
+      color: var(--deep-navy);
+      box-shadow: none;
+    }
+    .btn-outline:hover {
+      background: var(--teal-bright);
+      color: #0a2a2a;
+    }
+
+    /* image placeholder style */
+    .img-placeholder {
+      background-color: var(--placeholder-bg);
+      border-radius: 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: var(--placeholder-icon);
+      font-size: 1rem;
+      font-weight: 400;
+      border: 2px dashed #b6c8d9;
+      transition: background 0.2s;
+      text-align: center;
+      width: 100%;
+      height: 100%;
+      min-height: 200px;
+    }
+    .img-placeholder i {
+      font-size: 3rem;
+      margin-bottom: 12px;
+      opacity: 0.7;
+    }
+    .img-placeholder span {
+      background: rgba(255,255,255,0.5);
+      padding: 4px 12px;
+      border-radius: 40px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #3b4e5e;
+    }
+    /* round small placeholder (testimonial) */
+    .img-placeholder.round {
+      border-radius: 50%;
+      width: 80px;
+      height: 80px;
+      min-height: auto;
+      border: 2px dashed #b6c8d9;
+    }
+    .img-placeholder.round i {
+      font-size: 2rem;
+      margin-bottom: 0;
+    }
+    .img-placeholder.round span {
+      display: none; /* hide text for round small ones */
+    }
+
+    /* hero */
+    .hero {
+      padding: 60px 0 40px;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+    .hero h1 {
+      font-size: 3.2rem;
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--deep-navy);
+      margin-bottom: 20px;
+    }
+    .hero h1 span {
+      color: var(--teal-bright);
+      border-bottom: 4px solid rgba(30,190,165,0.3);
+    }
+    .hero p {
+      font-size: 1.2rem;
+      color: var(--gray-mild);
+      max-width: 500px;
+      margin-bottom: 30px;
+    }
+    .hero .img-placeholder {
+      min-height: 340px;
+    }
+
+    /* features */
+    .section-header {
+      text-align: center;
+      margin: 60px 0 40px;
+    }
+    .section-header h2 {
+      font-size: 2.5rem;
+      color: var(--deep-navy);
+    }
+    .section-header p {
+      color: var(--gray-mild);
+      font-size: 1.2rem;
+      margin-top: 12px;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin-bottom: 20px;
+    }
+    .feature-card {
+      background: var(--white-soft);
+      padding: 32px 24px;
+      border-radius: 40px;
+      box-shadow: 0 20px 40px -16px rgba(11,43,64,0.1);
+      text-align: center;
+      border: 1px solid var(--border-light);
+    }
+    .feature-icon {
+      font-size: 2.8rem;
+      color: var(--teal-bright);
+      margin-bottom: 16px;
+    }
+    .feature-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 8px;
+    }
+    .feature-card p {
+      color: var(--gray-mild);
+    }
+
+    /* courses grid */
+    .courses-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin: 40px 0;
+    }
+    .course-card {
+      background: var(--white-soft);
+      border-radius: 32px;
+      overflow: hidden;
+      box-shadow: 0 20px 30px -10px rgba(0,40,50,0.1);
+      transition: 0.25s;
+      border: 1px solid var(--border-light);
+    }
+    .course-card:hover {
+      transform: scale(1.02);
+      box-shadow: 0 30px 40px -12px var(--teal-bright);
+    }
+    .course-card .img-placeholder {
+      border-radius: 0 0 24px 24px;
+      min-height: 200px;
+      border: none;
+      border-bottom: 2px dashed #b6c8d9;
+    }
+    .course-content {
+      padding: 24px 20px 28px;
+    }
+    .course-content h3 {
+      font-size: 1.6rem;
+      font-weight: 600;
+    }
+    .course-badge {
+      display: inline-block;
+      background: #e0f2f0;
+      color: #116455;
+      font-weight: 600;
+      padding: 6px 16px;
+      border-radius: 40px;
+      font-size: 0.9rem;
+      margin: 12px 0 8px;
+    }
+    .course-content p {
+      color: var(--gray-mild);
+      margin-bottom: 20px;
+    }
+
+    /* opportunities (work abroad) */
+    .opportunities-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+      margin: 60px 0;
+    }
+    .opp-text h2 {
+      font-size: 2.4rem;
+      color: var(--deep-navy);
+      margin-bottom: 24px;
+    }
+    .opp-text h2 i {
+      color: var(--teal-bright);
+      margin-right: 8px;
+    }
+    .opp-list {
+      list-style: none;
+      margin: 30px 0;
+    }
+    .opp-list li {
+      margin: 16px 0;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .opp-list i {
+      color: var(--teal-bright);
+      font-size: 1.6rem;
+      width: 32px;
+    }
+
+    /* testimonial */
+    .testimonial-card {
+      background: var(--slate-light);
+      border-radius: 48px;
+      padding: 48px 48px;
+      margin: 60px 0;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 40px;
+      border: 1px solid var(--border-light);
+    }
+    .testimonial-img {
+      flex: 0 0 120px;
+    }
+    .testimonial-quote {
+      flex: 1;
+    }
+    .testimonial-quote i {
+      color: var(--teal-bright);
+      font-size: 2rem;
+      opacity: 0.5;
+      margin-right: 8px;
+    }
+    .testimonial-quote p {
+      font-size: 1.3rem;
+      font-weight: 500;
+      margin: 16px 0 20px;
+      color: #1d3a4f;
+    }
+    .student-name {
+      font-weight: 700;
+      color: var(--deep-navy);
+    }
+    .student-loc {
+      color: var(--teal-bright);
+      font-weight: 500;
+    }
+
+    /* cta */
+    .cta-section {
+      background: linear-gradient(145deg, #0b2b40 0%, #174c63 100%);
+      border-radius: 60px;
+      padding: 70px 40px;
+      text-align: center;
+      color: white;
+      margin: 60px 0;
+    }
+    .cta-section h2 {
+      font-size: 2.6rem;
+      margin-bottom: 16px;
+    }
+    .cta-section p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 0 auto 30px;
+      opacity: 0.9;
+    }
+    .cta-section .btn {
+      background: white;
+      color: var(--deep-navy);
+      box-shadow: none;
+    }
+    .cta-section .btn:hover {
+      background: var(--teal-bright);
+      color: white;
+    }
+
+    /* footer */
+    .footer {
+      border-top: 1px solid var(--border-light);
+      padding: 40px 0 30px;
+      margin-top: 40px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      gap: 30px;
+    }
+    .footer-col p {
+      color: var(--gray-mild);
+      margin: 20px 0;
+    }
+    .social-icons i {
+      font-size: 1.8rem;
+      margin-right: 20px;
+      color: var(--deep-navy);
+      transition: color 0.2s;
+    }
+    .social-icons i:hover {
+      color: var(--teal-bright);
+    }
+    .footer-links li {
+      list-style: none;
+      margin: 12px 0;
+    }
+    .footer-links a {
+      text-decoration: none;
+      color: var(--gray-mild);
+    }
+    .footer-links a:hover {
+      color: var(--teal-bright);
+    }
+    .copyright {
+      text-align: center;
+      color: var(--gray-mild);
+      margin-top: 50px;
+      font-size: 0.9rem;
+    }
+
+    /* responsive */
+    @media (max-width: 900px) {
+      .hero-grid, .opportunities-grid, .features-grid, .courses-grid, .footer-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      .navbar {
+        flex-direction: column;
+        gap: 16px;
+      }
+      .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 24px;
+      }
+      .testimonial-card {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+    @media (max-width: 600px) {
+      .container {
+        padding: 0 20px;
+      }
+    }
+
+    /* manual image spots are placeholders — you can replace the inner divs with <img> later */
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- navigation -->
+    <nav class="navbar">
+      <div class="logo">Edu<span>Global</span></div>
+      <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="#">Courses</a>
+        <a href="#">Work abroad</a>
+        <a href="#">Contact</a>
+      </div>
+      <a href="#" class="btn btn-outline" style="padding: 8px 24px;">Get started</a>
+    </nav>
+
+    <!-- hero section with large image placeholder -->
+    <section class="hero">
+      <div class="hero-grid">
+        <div>
+          <h1>Short courses, <span>global career</span></h1>
+          <p>Intensive training — direct placement in international companies. Complete any of our programs and start working abroad.</p>
+          <a href="#" class="btn">Explore courses →</a>
+        </div>
+        <div class="img-placeholder" style="min-height: 300px;">
+          <i class="fas fa-image"></i>
+          <span>Hero image (you can replace me)</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- features / why choose us (icons, no placeholders needed) -->
+    <div class="section-header">
+      <h2>Why students trust us</h2>
+      <p>Short-term effort · long‑term global move</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fas fa-rocket"></i></div>
+        <h3>8‑week courses</h3>
+        <p>Fast, focused & industry‑endorsed. Learn what really matters.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fas fa-briefcase"></i></div>
+        <h3>Placement abroad</h3>
+        <p>We connect you with employers in 15+ countries.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fas fa-globe"></i></div>
+        <h3>Visa & relocation</h3>
+        <p>Dedicated support for your move — from paperwork to accommodation.</p>
+      </div>
+    </div>
+
+    <!-- popular courses (each card includes an image placeholder) -->
+    <div class="section-header">
+      <h2>📘  Popular short courses</h2>
+      <p>with guaranteed international work pathway</p>
+    </div>
+    <div class="courses-grid">
+      <!-- course 1 -->
+      <div class="course-card">
+        <div class="img-placeholder">
+          <i class="fas fa-camera"></i>
+          <span>digital marketing image</span>
+        </div>
+        <div class="course-content">
+          <h3>Digital Marketing</h3>
+          <div class="course-badge">6 weeks · online</div>
+          <p>SEO, social ads, analytics. internships in Dublin & Berlin.</p>
+          <a href="#" class="btn-outline" style="padding: 8px 24px;">learn more</a>
+        </div>
+      </div>
+      <!-- course 2 -->
+      <div class="course-card">
+        <div class="img-placeholder">
+          <i class="fas fa-camera"></i>
+          <span>web dev image</span>
+        </div>
+        <div class="course-content">
+          <h3>Full‑Stack Dev</h3>
+          <div class="course-badge">12 weeks · live</div>
+          <p>MERN, Python, AWS. Hiring partners in Canada & UK.</p>
+          <a href="#" class="btn-outline" style="padding: 8px 24px;">learn more</a>
+        </div>
+      </div>
+      <!-- course 3 -->
+      <div class="course-card">
+        <div class="img-placeholder">
+          <i class="fas fa-camera"></i>
+          <span>hospitality image</span>
+        </div>
+        <div class="course-content">
+          <h3>Hospitality Mgmt</h3>
+          <div class="course-badge">8 weeks · blended</div>
+          <p>Hotels, tourism, luxury brands. Placement in UAE & Switzerland.</p>
+          <a href="#" class="btn-outline" style="padding: 8px 24px;">learn more</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- opportunities / work abroad (with image placeholder) -->
+    <div class="opportunities-grid">
+      <div class="opp-text">
+        <h2><i class="fas fa-plane-departure"></i> Work abroad guarantee</h2>
+        <p>After course completion you gain access to our exclusive global hiring network. We don't stop at a certificate — you get a real job.</p>
+        <ul class="opp-list">
+          <li><i class="fas fa-check-circle"></i> USA · UK · Germany · Canada</li>
+          <li><i class="fas fa-check-circle"></i> Australia · UAE · Singapore</li>
+          <li><i class="fas fa-check-circle"></i> Remote global positions available</li>
+          <li><i class="fas fa-check-circle"></i> 98% placement rate within 4 months</li>
+        </ul>
+        <a href="#" class="btn">View hiring partners</a>
+      </div>
+      <div class="img-placeholder" style="min-height: 280px;">
+        <i class="fas fa-map-globe"></i>
+        <span>world map / partners (place image here)</span>
+      </div>
+    </div>
+
+    <!-- testimonial with small round image placeholder -->
+    <div class="testimonial-card">
+      <div class="testimonial-img">
+        <div class="img-placeholder round">
+          <i class="fas fa-user-circle"></i>
+          <!-- span hidden via CSS, just icon indicates image spot -->
+        </div>
+      </div>
+      <div class="testimonial-quote">
+        <i class="fas fa-quote-left"></i>
+        <p>I took the 8‑week digital marketing course, and within two months I started working at a tech startup in Berlin. EduGlobal handled everything — from interview prep to relocation.</p>
+        <div class="student-name">Marta Silva</div>
+        <div class="student-loc">now: Berlin, Germany</div>
+      </div>
+    </div>
+
+    <!-- call to action with clean background (no placeholder) -->
+    <div class="cta-section">
+      <h2>Ready to build your global career?</h2>
+      <p>Next courses start in April, June and August. Limited seats for international placement.</p>
+      <a href="#" class="btn">Apply for consultation</a>
+    </div>
+
+    <!-- footer with dummy info and social -->
+    <footer class="footer">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="logo" style="font-size: 2rem;">Edu<span>Global</span></div>
+          <p>Short courses, world career.<br>Your bridge to work abroad.</p>
+          <div class="social-icons">
+            <i class="fab fa-linkedin"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-youtube"></i>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul class="footer-links">
+            <li><a href="#">All courses</a></li>
+            <li><a href="#">Work abroad</a></li>
+            <li><a href="#">Success stories</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Support</h4>
+          <ul class="footer-links">
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Visa guidance</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>📍 based in</h4>
+          <p>London · Dubai · Singapore<br>online worldwide</p>
+        </div>
+      </div>
+      <div class="copyright">
+        © 2025 EduGlobal — your future starts here. All image placeholders are ready for your own photos.
+      </div>
+    </footer>
+  </div> <!-- container end -->
+</body>
+</html>
