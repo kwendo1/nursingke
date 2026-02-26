@@ -3,11 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NurseGlobal · short nursing courses, work abroad</title>
-  <!-- Google Font & Font Awesome -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <title>EUKEN Nurse Bridge · Kenya to Germany / Austria</title>
+  <!-- Font Awesome 6 (free) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     * {
@@ -17,614 +14,530 @@
     }
 
     body {
-      font-family: 'Inter', sans-serif;
-      background-color: #fbfdff;
-      color: #1e2b37;
+      font-family: 'Segoe UI', Roboto, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: #f4f9fc;
+      color: #103c4c;
       line-height: 1.5;
     }
 
-    /* color palette (soft medical + trust) */
-    :root {
-      --deep-navy: #0b2b40;
-      --teal-bright: #1ebea5;
-      --slate-light: #f0f6fa;
-      --white-soft: #ffffff;
-      --gray-mild: #5f6c7a;
-      --border-light: #dce5ec;
-      --placeholder-bg: #e6edf4;
-      --placeholder-icon: #7f8d9c;
-    }
-
     .container {
-      max-width: 1280px;
+      max-width: 1300px;
       margin: 0 auto;
-      padding: 0 32px;
+      padding: 1.8rem 2rem;
     }
 
-    /* header */
-    .navbar {
+    /* header & hero */
+    .hero {
+      background: linear-gradient(135deg, #e3f0f5 0%, #cae3ed 100%);
+      border-radius: 2rem 2rem 2rem 2rem;
+      padding: 2.5rem 2.8rem;
+      margin-bottom: 2.5rem;
+      box-shadow: 0 10px 20px rgba(8, 60, 80, 0.1);
+      border: 1px solid rgba(70, 147, 173, 0.2);
+    }
+
+    .hero h1 {
+      font-size: 2.6rem;
+      font-weight: 600;
+      color: #03506f;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero h1 i {
+      color: #1e7e9f;
+      margin-right: 10px;
+    }
+
+    .hero .tagline {
+      font-size: 1.3rem;
+      color: #1a5f7a;
+      margin-bottom: 1.2rem;
+      font-weight: 400;
+      border-left: 5px solid #1e7e9f;
+      padding-left: 1.5rem;
+    }
+
+    .hero .ex-summary {
+      background: white;
+      padding: 1.3rem 2rem;
+      border-radius: 3rem 3rem 3rem 0.5rem;
+      font-size: 1.1rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+      color: #0a4255;
+      border: 1px solid #c5e0ea;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      font-weight: 600;
+      margin: 2.5rem 0 1.5rem 0;
+      color: #03506f;
+      position: relative;
+      padding-bottom: 0.5rem;
+    }
+
+    .section-title i {
+      color: #389bb9;
+      margin-right: 12px;
+    }
+
+    .section-title:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 110px;
+      height: 4px;
+      background: #5fb0c9;
+      border-radius: 4px;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin: 1.5rem 0 2rem;
+    }
+
+    .country-card {
+      background: white;
+      border-radius: 2rem;
+      padding: 2rem 1.8rem;
+      box-shadow: 0 18px 30px -12px rgba(2, 70, 100, 0.2);
+      border: 1px solid #cee6f0;
+      transition: transform 0.2s;
+    }
+
+    .country-card:hover {
+      transform: scale(1.01);
+      border-color: #94cbdf;
+    }
+
+    .country-name {
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 1.2rem;
+      border-bottom: 3px solid;
+      padding-bottom: 0.5rem;
+      display: inline-block;
+    }
+
+    .de .country-name { border-color: #e08e3a; color: #b35900; }
+    .at .country-name { border-color: #c72d2d; color: #a12525; }
+
+    .sub-block {
+      margin: 1.8rem 0 1.2rem;
+    }
+
+    .sub-head {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #125d7a;
+      margin-bottom: 0.8rem;
       display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .sub-head i {
+      color: #1e7e9f;
+      width: 1.8rem;
+    }
+
+    .authority-list {
+      list-style: none;
+      background: #f1f9ff;
+      padding: 1.2rem 1.5rem;
+      border-radius: 1.5rem;
+      margin: 0.8rem 0;
+    }
+
+    .authority-list li {
+      margin-bottom: 0.8rem;
+      border-bottom: 1px dashed #b9d6e3;
+      padding-bottom: 0.6rem;
+    }
+
+    .authority-list li:last-child {
+      border: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .auth-link {
+      font-weight: 500;
+      word-break: break-word;
+    }
+
+    .auth-link a {
+      color: #0b5775;
+      text-decoration: none;
+      border-bottom: 1px dotted;
+    }
+
+    .auth-link a:hover {
+      color: #022b38;
+    }
+
+    .req-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem 1.2rem;
+      margin: 1rem 0;
+    }
+
+    .req-item {
+      background: #e4f0f6;
+      border-radius: 30px;
+      padding: 0.4rem 1.2rem 0.4rem 1rem;
+      font-size: 0.95rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .req-item i {
+      color: #1f7999;
+      font-size: 0.9rem;
+    }
+
+    .time-badge {
+      background: #fff4e5;
+      padding: 0.7rem 1.3rem;
+      border-radius: 30px;
+      font-weight: 500;
+      margin-top: 0.8rem;
+      border-left: 6px solid #ffb152;
+    }
+
+    /* important note */
+    .note-box {
+      background: #fff9d7;
+      border-left: 12px solid #f3b33d;
+      padding: 1.2rem 2rem;
+      border-radius: 1.5rem;
+      margin: 2rem 0 1.5rem;
+      font-weight: 500;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+    }
+
+    .kenya-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.8rem;
+      margin: 2rem 0;
+    }
+
+    .kenya-card {
+      background: white;
+      border-radius: 1.8rem;
+      padding: 1.8rem 1.5rem;
+      box-shadow: 0 10px 18px rgba(39, 103, 128, 0.1);
+      border: 1px solid #bee0ec;
+    }
+
+    .kenya-card h3 {
+      font-size: 1.5rem;
+      color: #03506f;
+      margin-bottom: 1rem;
+      border-left: 4px solid #50b0cd;
+      padding-left: 0.8rem;
+    }
+
+    .kenya-card ul {
+      list-style: none;
+    }
+
+    .kenya-card li {
+      margin-bottom: 0.7rem;
+      display: flex;
+      gap: 10px;
+      align-items: baseline;
+    }
+
+    .kenya-card li i {
+      color: #1795b5;
+      width: 1.5rem;
+      text-align: center;
+      font-size: 1rem;
+      margin-top: 0.2rem;
+    }
+
+    .workflow-steps {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+      background: #ffffffd9;
+      padding: 2rem 2rem;
+      border-radius: 4rem 1rem 4rem 1rem;
+      border: 2px dashed #5fa3bc;
+      margin: 2rem 0;
+    }
+
+    .step {
+      flex: 1 1 160px;
+      text-align: center;
+      background: #e7f2f7;
+      border-radius: 3rem;
+      padding: 1.2rem 0.5rem;
+      font-weight: 600;
+      color: #03506f;
+      box-shadow: 0 6px 0 #b4cfdd;
+    }
+
+    .step i {
+      font-size: 2rem;
+      display: block;
+      margin-bottom: 0.3rem;
+      color: #1f6e8c;
+    }
+
+    .compliance {
+      background: #e1f0f7;
+      border-radius: 2rem;
+      padding: 1.8rem 2.2rem;
+      margin: 2.5rem 0 1.5rem;
+      border: 1px solid #96c5da;
+    }
+
+    .footer {
+      margin-top: 4rem;
+      background: #073b4b;
+      color: #e2f0f5;
+      border-radius: 3rem 3rem 1rem 1rem;
+      padding: 2rem 2.5rem;
+      display: flex;
+      flex-wrap: wrap;
       justify-content: space-between;
       align-items: center;
-      padding: 20px 0;
-      flex-wrap: wrap;
-      border-bottom: 1px solid var(--border-light);
     }
 
-    .logo {
-      font-size: 1.9rem;
-      font-weight: 700;
-      letter-spacing: -0.5px;
-      color: var(--deep-navy);
-    }
-    .logo span {
-      color: var(--teal-bright);
-      font-weight: 600;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 40px;
+    .footer a {
+      color: #b3e4f7;
+      text-decoration: none;
       font-weight: 500;
-    }
-    .nav-links a {
-      text-decoration: none;
-      color: var(--deep-navy);
-      transition: color 0.2s;
-    }
-    .nav-links a:hover {
-      color: var(--teal-bright);
+      border-bottom: 1px dotted;
     }
 
-    /* buttons */
-    .btn {
-      display: inline-block;
-      background-color: var(--teal-bright);
-      color: #0a2a2a;
-      font-weight: 600;
-      padding: 12px 32px;
-      border-radius: 50px;
-      text-decoration: none;
-      transition: 0.2s;
+    .footer .contact i {
+      margin-right: 10px;
+      color: #6fc2df;
+    }
+
+    hr {
       border: none;
-      cursor: pointer;
-      box-shadow: 0 8px 16px -8px rgba(30,190,165,0.3);
-    }
-    .btn:hover {
-      background-color: #179e88;
-      transform: translateY(-2px);
-      box-shadow: 0 16px 24px -8px rgba(30,190,165,0.4);
-    }
-    .btn-outline {
-      background: transparent;
-      border: 2px solid var(--teal-bright);
-      color: var(--deep-navy);
-      box-shadow: none;
-    }
-    .btn-outline:hover {
-      background: var(--teal-bright);
-      color: #0a2a2a;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #8cc3d9, transparent);
+      margin: 1.5rem 0;
     }
 
-    /* image placeholder style */
-    .img-placeholder {
-      background-color: var(--placeholder-bg);
-      border-radius: 24px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      color: var(--placeholder-icon);
-      font-size: 1rem;
-      font-weight: 400;
-      border: 2px dashed #b6c8d9;
-      transition: background 0.2s;
-      text-align: center;
-      width: 100%;
-      height: 100%;
-      min-height: 200px;
-    }
-    .img-placeholder i {
-      font-size: 3rem;
-      margin-bottom: 12px;
-      opacity: 0.7;
-    }
-    .img-placeholder span {
-      background: rgba(255,255,255,0.5);
-      padding: 4px 12px;
-      border-radius: 40px;
-      font-size: 0.9rem;
-      font-weight: 500;
-      color: #3b4e5e;
-    }
-    /* round small placeholder (testimonial) */
-    .img-placeholder.round {
-      border-radius: 50%;
-      width: 80px;
-      height: 80px;
-      min-height: auto;
-      border: 2px dashed #b6c8d9;
-    }
-    .img-placeholder.round i {
-      font-size: 2rem;
-      margin-bottom: 0;
-    }
-    .img-placeholder.round span {
-      display: none; /* hide text for round small ones */
-    }
-
-    /* hero */
-    .hero {
-      padding: 60px 0 40px;
-    }
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 50px;
-      align-items: center;
-    }
-    .hero h1 {
-      font-size: 3.2rem;
-      font-weight: 700;
-      line-height: 1.2;
-      color: var(--deep-navy);
-      margin-bottom: 20px;
-    }
-    .hero h1 span {
-      color: var(--teal-bright);
-      border-bottom: 4px solid rgba(30,190,165,0.3);
-    }
-    .hero p {
-      font-size: 1.2rem;
-      color: var(--gray-mild);
-      max-width: 500px;
-      margin-bottom: 30px;
-    }
-    .hero .img-placeholder {
-      min-height: 340px;
-    }
-
-    /* features */
-    .section-header {
-      text-align: center;
-      margin: 60px 0 40px;
-    }
-    .section-header h2 {
-      font-size: 2.5rem;
-      color: var(--deep-navy);
-    }
-    .section-header p {
-      color: var(--gray-mild);
-      font-size: 1.2rem;
-      margin-top: 12px;
-    }
-
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 30px;
-      margin-bottom: 20px;
-    }
-    .feature-card {
-      background: var(--white-soft);
-      padding: 32px 24px;
-      border-radius: 40px;
-      box-shadow: 0 20px 40px -16px rgba(11,43,64,0.1);
-      text-align: center;
-      border: 1px solid var(--border-light);
-    }
-    .feature-icon {
-      font-size: 2.8rem;
-      color: var(--teal-bright);
-      margin-bottom: 16px;
-    }
-    .feature-card h3 {
-      font-size: 1.5rem;
-      margin-bottom: 8px;
-    }
-    .feature-card p {
-      color: var(--gray-mild);
-    }
-
-    /* courses grid */
-    .courses-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 30px;
-      margin: 40px 0;
-    }
-    .course-card {
-      background: var(--white-soft);
-      border-radius: 32px;
-      overflow: hidden;
-      box-shadow: 0 20px 30px -10px rgba(0,40,50,0.1);
-      transition: 0.25s;
-      border: 1px solid var(--border-light);
-    }
-    .course-card:hover {
-      transform: scale(1.02);
-      box-shadow: 0 30px 40px -12px var(--teal-bright);
-    }
-    .course-card .img-placeholder {
-      border-radius: 0 0 24px 24px;
-      min-height: 200px;
-      border: none;
-      border-bottom: 2px dashed #b6c8d9;
-    }
-    .course-content {
-      padding: 24px 20px 28px;
-    }
-    .course-content h3 {
-      font-size: 1.6rem;
-      font-weight: 600;
-    }
-    .course-badge {
-      display: inline-block;
-      background: #e0f2f0;
-      color: #116455;
-      font-weight: 600;
-      padding: 6px 16px;
-      border-radius: 40px;
-      font-size: 0.9rem;
-      margin: 12px 0 8px;
-    }
-    .course-content p {
-      color: var(--gray-mild);
-      margin-bottom: 20px;
-    }
-
-    /* opportunities (work abroad for nurses) */
-    .opportunities-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 50px;
-      align-items: center;
-      margin: 60px 0;
-    }
-    .opp-text h2 {
-      font-size: 2.4rem;
-      color: var(--deep-navy);
-      margin-bottom: 24px;
-    }
-    .opp-text h2 i {
-      color: var(--teal-bright);
-      margin-right: 8px;
-    }
-    .opp-list {
-      list-style: none;
-      margin: 30px 0;
-    }
-    .opp-list li {
-      margin: 16px 0;
-      font-size: 1.2rem;
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-    .opp-list i {
-      color: var(--teal-bright);
-      font-size: 1.6rem;
-      width: 32px;
-    }
-
-    /* testimonial */
-    .testimonial-card {
-      background: var(--slate-light);
-      border-radius: 48px;
-      padding: 48px 48px;
-      margin: 60px 0;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 40px;
-      border: 1px solid var(--border-light);
-    }
-    .testimonial-img {
-      flex: 0 0 120px;
-    }
-    .testimonial-quote {
-      flex: 1;
-    }
-    .testimonial-quote i {
-      color: var(--teal-bright);
-      font-size: 2rem;
-      opacity: 0.5;
-      margin-right: 8px;
-    }
-    .testimonial-quote p {
-      font-size: 1.3rem;
-      font-weight: 500;
-      margin: 16px 0 20px;
-      color: #1d3a4f;
-    }
-    .student-name {
-      font-weight: 700;
-      color: var(--deep-navy);
-    }
-    .student-loc {
-      color: var(--teal-bright);
-      font-weight: 500;
-    }
-
-    /* cta */
-    .cta-section {
-      background: linear-gradient(145deg, #0b2b40 0%, #174c63 100%);
-      border-radius: 60px;
-      padding: 70px 40px;
-      text-align: center;
-      color: white;
-      margin: 60px 0;
-    }
-    .cta-section h2 {
-      font-size: 2.6rem;
-      margin-bottom: 16px;
-    }
-    .cta-section p {
-      font-size: 1.2rem;
-      max-width: 600px;
-      margin: 0 auto 30px;
-      opacity: 0.9;
-    }
-    .cta-section .btn {
-      background: white;
-      color: var(--deep-navy);
-      box-shadow: none;
-    }
-    .cta-section .btn:hover {
-      background: var(--teal-bright);
-      color: white;
-    }
-
-    /* footer */
-    .footer {
-      border-top: 1px solid var(--border-light);
-      padding: 40px 0 30px;
-      margin-top: 40px;
-    }
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr 1.5fr;
-      gap: 30px;
-    }
-    .footer-col p {
-      color: var(--gray-mild);
-      margin: 20px 0;
-    }
-    .social-icons i {
-      font-size: 1.8rem;
-      margin-right: 20px;
-      color: var(--deep-navy);
-      transition: color 0.2s;
-    }
-    .social-icons i:hover {
-      color: var(--teal-bright);
-    }
-    .footer-links li {
-      list-style: none;
-      margin: 12px 0;
-    }
-    .footer-links a {
-      text-decoration: none;
-      color: var(--gray-mild);
-    }
-    .footer-links a:hover {
-      color: var(--teal-bright);
-    }
-    .copyright {
-      text-align: center;
-      color: var(--gray-mild);
-      margin-top: 50px;
-      font-size: 0.9rem;
-    }
-
-    /* responsive */
-    @media (max-width: 900px) {
-      .hero-grid, .opportunities-grid, .features-grid, .courses-grid, .footer-grid {
-        grid-template-columns: 1fr;
-      }
-      .hero h1 {
-        font-size: 2.5rem;
-      }
-      .navbar {
-        flex-direction: column;
-        gap: 16px;
-      }
-      .nav-links {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 24px;
-      }
-      .testimonial-card {
-        flex-direction: column;
-        text-align: center;
-      }
-    }
-    @media (max-width: 600px) {
-      .container {
-        padding: 0 20px;
-      }
+    @media (max-width: 800px) {
+      .two-col { grid-template-columns: 1fr; }
+      .kenya-grid { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 2rem; }
+      .container { padding: 1rem; }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <!-- navigation -->
-    <nav class="navbar">
-      <div class="logo">Nurse<span>Global</span></div>
-      <div class="nav-links">
-        <a href="#">Home</a>
-        <a href="#">Nursing courses</a>
-        <a href="#">Work abroad</a>
-        <a href="#">Contact</a>
-      </div>
-      <a href="#" class="btn btn-outline" style="padding: 8px 24px;">RN start</a>
-    </nav>
+<div class="container">
 
-    <!-- hero section with large image placeholder (nursing theme) -->
-    <section class="hero">
-      <div class="hero-grid">
-        <div>
-          <h1>Short nursing courses, <span>global placement</span></h1>
-          <p>Specialised training for registered nurses. Upon completion, we connect you with hospitals and clinics abroad that sponsor your move.</p>
-          <a href="#" class="btn">View nursing programs →</a>
-        </div>
-        <div class="img-placeholder" style="min-height: 300px;">
-          <i class="fas fa-user-nurse"></i>
-          <span>hero image (nurse / stethoscope)</span>
-        </div>
-      </div>
-    </section>
+  <!-- hero + executive summary -->
+  <div class="hero">
+    <h1><i class="fas fa-hand-holding-heart"></i> EUKEN Nurse Bridge</h1>
+    <div class="tagline">Connecting qualified Kenyan nurses & caregivers with Germany and Austria</div>
+    <div class="ex-summary">
+      <i class="fas fa-bullseye" style="color:#0b5d7a; margin-right:12px;"></i> 
+      <strong>Executive summary:</strong> This platform outlines official application authorities, minimum requirements, and realistic timeframes for recognition and recruitment of qualified nurses/caregivers from Kenya to Germany and Austria. We support recruitment partners with end‑to‑end services: document prep, translation, recognition, employer liaison, and visa.
+    </div>
+  </div>
 
-    <!-- features / why choose us (nursing-specific) -->
-    <div class="section-header">
-      <h2>Why nurses choose us</h2>
-      <p>Fast‑track your international nursing career</p>
-    </div>
-    <div class="features-grid">
-      <div class="feature-card">
-        <div class="feature-icon"><i class="fas fa-certificate"></i></div>
-        <h3>CGFNS / NCLEX prep</h3>
-        <p>Courses designed to meet licensing standards in USA, Canada, UK, and more.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon"><i class="fas fa-hospital-user"></i></div>
-        <h3>Direct hospital placement</h3>
-        <p>We partner with over 200 accredited hospitals in 12 countries.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon"><i class="fas fa-passport"></i></div>
-        <h3>Visa & relocation support</h3>
-        <p>From credential evaluation to accommodation – we guide you every step.</p>
-      </div>
-    </div>
+  <!-- important note from PDF2 (no blanket recognition) -->
+  <div class="note-box">
+    <i class="fas fa-exclamation-triangle" style="font-size:1.8rem; float:left; margin-right:20px; color:#b16513;"></i>
+    <p><strong>Important note:</strong> Germany and Austria do <u>not</u> issue blanket or automatic recognition of foreign institutions or qualifications. Recognition is carried out on an individual, case‑by‑case basis by the competent authority. The institutions and qualifications listed are commonly submitted and assessed — but final decisions rest with each country’s authority.</p>
+  </div>
 
-    <!-- nursing courses (each card includes an image placeholder) -->
-    <div class="section-header">
-      <h2>🩺  Popular nursing short courses</h2>
-      <p>with guaranteed international work pathway</p>
-    </div>
-    <div class="courses-grid">
-      <!-- course 1 -->
-      <div class="course-card">
-        <div class="img-placeholder">
-          <i class="fas fa-camera"></i>
-          <span>NCLEX / IELTS prep</span>
-        </div>
-        <div class="course-content">
-          <h3>NCLEX / IELTS combo</h3>
-          <div class="course-badge">4 weeks · online</div>
-          <p>Intensive review for US/Canada licensing. Includes 1-on‑1 tutoring.</p>
-          <a href="#" class="btn-outline" style="padding: 8px 24px;">learn more</a>
-        </div>
-      </div>
-      <!-- course 2 -->
-      <div class="course-card">
-        <div class="img-placeholder">
-          <i class="fas fa-camera"></i>
-          <span>critical care</span>
-        </div>
-        <div class="course-content">
-          <h3>Critical Care (ICU)</h3>
-          <div class="course-badge">8 weeks · blended</div>
-          <p>Advanced cardiac, ventilator management. Direct ICU placement in UK & Germany.</p>
-          <a href="#" class="btn-outline" style="padding: 8px 24px;">learn more</a>
-        </div>
-      </div>
-      <!-- course 3 -->
-      <div class="course-card">
-        <div class="img-placeholder">
-          <i class="fas fa-camera"></i>
-          <span>aged care</span>
-        </div>
-        <div class="course-content">
-          <h3>Aged Care / Gerontology</h3>
-          <div class="course-badge">6 weeks · online + practical</div>
-          <p>High‑demand in Australia, New Zealand, Ireland. Includes clinical placement.</p>
-          <a href="#" class="btn-outline" style="padding: 8px 24px;">learn more</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- opportunities / work abroad for nurses (with image placeholder) -->
-    <div class="opportunities-grid">
-      <div class="opp-text">
-        <h2><i class="fas fa-plane-departure"></i> Work abroad as a nurse</h2>
-        <p>We don't stop at a certificate – you get a real job offer. Our network includes hospitals actively hiring foreign-educated nurses.</p>
-        <ul class="opp-list">
-          <li><i class="fas fa-check-circle"></i> USA · Canada · UK · Ireland</li>
-          <li><i class="fas fa-check-circle"></i> Australia · New Zealand · Germany</li>
-          <li><i class="fas fa-check-circle"></i> UAE · Saudi Arabia · Singapore</li>
-          <li><i class="fas fa-check-circle"></i> 94% placement rate within 6 months</li>
+  <!-- Germany & Austria side by side -->
+  <div class="two-col">
+    <!-- Germany card -->
+    <div class="country-card de">
+      <div class="country-name"><i class="fas fa-flag"></i> Germany</div>
+      
+      <div class="sub-block">
+        <div class="sub-head"><i class="fas fa-university"></i> Official authorities</div>
+        <ul class="authority-list">
+          <li><i class="fas fa-external-link-alt" style="margin-right:8px;"></i> <span class="auth-link"><strong>Anerkennung in Deutschland</strong> – central portal <a href="#">www.anerkennung-in-deutschland.de</a></span></li>
+          <li><i class="fas fa-users"></i> <span class="auth-link"><strong>ZAV (Zentrale Auslands- und Fachvermittlung)</strong> – supports international recruitment <a href="#">www.arbeitsagentur.de/zav</a></span></li>
+          <li><i class="fas fa-info-circle"></i> <span class="auth-link"><strong>Make-it-in-Germany</strong> – official information for skilled workers <a href="#">www.make-it-in-germany.com</a></span></li>
         </ul>
-        <a href="#" class="btn">See hiring countries</a>
       </div>
-      <div class="img-placeholder" style="min-height: 280px;">
-        <i class="fas fa-globe-asia"></i>
-        <span>world map with nurse pins</span>
+
+      <div class="sub-block">
+        <div class="sub-head"><i class="fas fa-clipboard-check"></i> Minimum requirements</div>
+        <div class="req-grid">
+          <span class="req-item"><i class="fas fa-graduation-cap"></i> Nursing diploma & transcripts</span>
+          <span class="req-item"><i class="fas fa-file-alt"></i> Curriculum / training hours</span>
+          <span class="req-item"><i class="fas fa-briefcase"></i> CV & references</span>
+          <span class="req-item"><i class="fas fa-passport"></i> Passport copy</span>
+          <span class="req-item"><i class="fas fa-shield-alt"></i> Police clearance</span>
+          <span class="req-item"><i class="fas fa-stethoscope"></i> Medical certificate</span>
+          <span class="req-item"><i class="fas fa-language"></i> German B1–B2*</span>
+          <span class="req-item"><i class="fas fa-file-pdf"></i> Certified German translations</span>
+        </div>
+        <p style="font-size:0.9rem; margin-top:10px;"><i class="fas fa-info-circle"></i> *depending on role</p>
+      </div>
+
+      <div class="sub-block">
+        <div class="sub-head"><i class="fas fa-hourglass-half"></i> Typical timeframes</div>
+        <div class="time-badge"><i class="far fa-calendar-alt"></i> Recognition processing: approx. 3–6 months (once complete). Additional time if adaptation training/exams are required.</div>
       </div>
     </div>
 
-    <!-- testimonial with small round image placeholder (nurse) -->
-    <div class="testimonial-card">
-      <div class="testimonial-img">
-        <div class="img-placeholder round">
-          <i class="fas fa-user-circle"></i>
-          <!-- span hidden via CSS, just icon indicates image spot -->
+    <!-- Austria card -->
+    <div class="country-card at">
+      <div class="country-name"><i class="fas fa-flag"></i> Austria</div>
+
+      <div class="sub-block">
+        <div class="sub-head"><i class="fas fa-university"></i> Official authorities</div>
+        <ul class="authority-list">
+          <li><i class="fas fa-shield-virus"></i> <span class="auth-link"><strong>Federal Ministry of Social Affairs, Health, Care (BMSGPK)</strong> – recognition of regulated professions <a href="#">www.sozialministerium.at</a></span></li>
+          <li><i class="fas fa-map-signs"></i> <span class="auth-link"><strong>GOEG (Nursing in Austria)</strong> – central guidance for recognition/nostrification <a href="#">www.goeg.at</a></span></li>
+          <li><i class="fas fa-briefcase"></i> <span class="auth-link"><strong>AMS (Arbeitsmarktservice)</strong> – Austrian Public Employment Service <a href="#">www.ams.at</a></span></li>
+        </ul>
+      </div>
+
+      <div class="sub-block">
+        <div class="sub-head"><i class="fas fa-clipboard-check"></i> Minimum requirements</div>
+        <div class="req-grid">
+          <span class="req-item"><i class="fas fa-graduation-cap"></i> Nursing/caregiver diploma & transcripts</span>
+          <span class="req-item"><i class="fas fa-file-alt"></i> Detailed curriculum</span>
+          <span class="req-item"><i class="fas fa-briefcase"></i> CV & references</span>
+          <span class="req-item"><i class="fas fa-shield-alt"></i> Police clearance</span>
+          <span class="req-item"><i class="fas fa-heartbeat"></i> Medical fitness</span>
+          <span class="req-item"><i class="fas fa-language"></i> German B2 (proof)</span>
+          <span class="req-item"><i class="fas fa-file-pdf"></i> Certified translations</span>
         </div>
       </div>
-      <div class="testimonial-quote">
-        <i class="fas fa-quote-left"></i>
-        <p>After the 8‑week critical care course, I received two job offers from hospitals in Dublin. NurseGlobal helped with my Irish Nursing Board registration and even found me temporary housing.</p>
-        <div class="student-name">Grace Mwangi, RN</div>
-        <div class="student-loc">now: Dublin, Ireland</div>
+
+      <div class="sub-block">
+        <div class="sub-head"><i class="fas fa-hourglass-half"></i> Typical timeframes</div>
+        <div class="time-badge"><i class="far fa-calendar-alt"></i> Standard recognition: approx. 3–4 months. Longer if adaptation training needed. Shortened one‑stop procedures may apply.</div>
       </div>
     </div>
+  </div>
 
-    <!-- call to action with nursing focus -->
-    <div class="cta-section">
-      <h2>Ready to take your nursing career abroad?</h2>
-      <p>Next NCLEX/IELTS cohort starts May 12. Limited seats for direct hospital placement.</p>
-      <a href="#" class="btn">Book a free consultation</a>
+  <!-- Kenyan qualifications and institutions (from PDF2) -->
+  <div class="section-title"><i class="fas fa-map-marker-alt"></i> Kenyan qualifications & institutions</div>
+  
+  <!-- regulatory bodies short -->
+  <div style="display: flex; gap: 2rem; flex-wrap: wrap; background: #dbeef5; border-radius: 2rem; padding: 1rem 2rem; margin-bottom: 2rem;">
+    <span><i class="fas fa-check-circle" style="color:#1d7e9e;"></i> <strong>Nursing Council of Kenya (NCK)</strong> – statutory regulator</span>
+    <span><i class="fas fa-check-circle" style="color:#1d7e9e;"></i> <strong>TVETA</strong> – regulates caregiving & health TVET</span>
+  </div>
+
+  <!-- common qualifications two lists -->
+  <div style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: space-between; background: white; border-radius: 2rem; padding: 1.8rem;">
+    <div style="flex:1;">
+      <h3 style="color: #03506f;"><i class="fas fa-user-nurse"></i> Nursing qualifications (NCK)</h3>
+      <ul style="list-style-type: none;">
+        <li><i class="fas fa-chevron-right" style="color:#389bb9;"></i> Diploma in KRCHN</li>
+        <li><i class="fas fa-chevron-right" style="color:#389bb9;"></i> Diploma in KRN</li>
+        <li><i class="fas fa-chevron-right" style="color:#389bb9;"></i> BSc Nursing</li>
+        <li><i class="fas fa-chevron-right" style="color:#389bb9;"></i> Post‑basic / higher diplomas</li>
+      </ul>
     </div>
+    <div style="flex:1;">
+      <h3 style="color: #03506f;"><i class="fas fa-hands"></i> Caregiving / assistant (TVET)</h3>
+      <ul style="list-style-type: none;">
+        <li><i class="fas fa-chevron-right" style="color:#389bb9;"></i> Certificate/Diploma in Health Care Assistance</li>
+        <li><i class="fas fa-chevron-right" style="color:#389bb9;"></i> Community Health & Development</li>
+        <li><i class="fas fa-chevron-right" style="color:#389bb9;"></i> Certificate in Geriatric Care</li>
+      </ul>
+    </div>
+  </div>
 
-    <!-- footer -->
-    <footer class="footer">
-      <div class="footer-grid">
-        <div class="footer-col">
-          <div class="logo" style="font-size: 2rem;">Nurse<span>Global</span></div>
-          <p>Short nursing courses, world career.<br>Your bridge to hospitals abroad.</p>
-          <div class="social-icons">
-            <i class="fab fa-linkedin"></i>
-            <i class="fab fa-instagram"></i>
-            <i class="fab fa-youtube"></i>
-          </div>
-        </div>
-        <div class="footer-col">
-          <h4>Programs</h4>
-          <ul class="footer-links">
-            <li><a href="#">NCLEX / IELTS</a></li>
-            <li><a href="#">Critical care</a></li>
-            <li><a href="#">Aged care</a></li>
-            <li><a href="#">Operating room</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Support</h4>
-          <ul class="footer-links">
-            <li><a href="#">Contact us</a></li>
-            <li><a href="#">FAQs</a></li>
-            <li><a href="#">Visa guidance</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>📍 headquarters</h4>
-          <p>London · Dubai · Manila<br>Online worldwide</p>
-        </div>
-      </div>
-      <div class="copyright">
-        © 2025 NurseGlobal — your nursing career starts here. All image placeholders are ready for your own photos.
-      </div>
-    </footer>
-  </div> <!-- container end -->
+  <!-- Kenyan institutions commonly represented (3 columns) -->
+  <div class="kenya-grid">
+    <div class="kenya-card">
+      <h3><i class="fas fa-hospital"></i> Public nursing / medical</h3>
+      <ul>
+        <li><i class="fas fa-school"></i> Kenya Medical Training College (KMTC – all campuses)</li>
+        <li><i class="fas fa-university"></i> University of Nairobi</li>
+        <li><i class="fas fa-university"></i> Kenyatta University</li>
+        <li><i class="fas fa-university"></i> Moi University</li>
+        <li><i class="fas fa-university"></i> Egerton University</li>
+      </ul>
+    </div>
+    <div class="kenya-card">
+      <h3><i class="fas fa-church"></i> Private / faith‑based</h3>
+      <ul>
+        <li><i class="fas fa-heart"></i> Aga Khan University – School of Nursing</li>
+        <li><i class="fas fa-cross"></i> Consolata Mission Nursing Schools</li>
+        <li><i class="fas fa-star-of-life"></i> St. Elizabeth, St. Mary’s</li>
+        <li><i class="fas fa-building"></i> Other NCK‑accredited faith‑based institutions</li>
+      </ul>
+    </div>
+    <div class="kenya-card">
+      <h3><i class="fas fa-tools"></i> TVET / caregiving</h3>
+      <ul>
+        <li><i class="fas fa-certificate"></i> TVETA‑registered colleges</li>
+        <li><i class="fas fa-clinic-medical"></i> Health Care Assistance programmes</li>
+        <li><i class="fas fa-hand-sparkles"></i> Community Health colleges</li>
+        <li><i class="fas fa-people-arrows"></i> Caregiving (geriatric) training</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- assessment criteria used in DE/AT -->
+  <div style="background: white; border-radius: 2rem; padding: 2rem; margin: 1.5rem 0;">
+    <h3 style="font-size: 1.8rem; color: #0b5d7a;"><i class="fas fa-balance-scale"></i> Assessment criteria in Germany & Austria</h3>
+    <p style="font-size: 1.1rem;">Recognition authorities compare training duration, theoretical content, clinical practice hours, and supervised placements against national curricula. Outcomes may include:</p>
+    <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; margin-top: 1.2rem;">
+      <span style="background: #c2e5f2; border-radius: 30px; padding: 0.4rem 1.5rem;"><i class="fas fa-check-circle" style="color:#1b7f9e;"></i> Full recognition</span>
+      <span style="background: #fce8c8; border-radius: 30px; padding: 0.4rem 1.5rem;"><i class="fas fa-clock"></i> Partial recognition + adaptation training</span>
+      <span style="background: #eed2d2; border-radius: 30px; padding: 0.4rem 1.5rem;"><i class="fas fa-level-down-alt"></i> Recognition at assistant level</span>
+      <span style="background: #f0c7c7; border-radius: 30px; padding: 0.4rem 1.5rem;"><i class="fas fa-times-circle"></i> Refusal if substantial differences</span>
+    </div>
+  </div>
+
+  <!-- agent workflow summary -->
+  <div class="section-title"><i class="fas fa-people-arrows"></i> Agent workflow (summary)</div>
+  <div class="workflow-steps">
+    <div class="step"><i class="fas fa-user-check"></i> 1. Pre-screen & collect docs</div>
+    <div class="step"><i class="fas fa-language"></i> 2. Translations & language prep</div>
+    <div class="step"><i class="fas fa-paper-plane"></i> 3. Submit recognition applications</div>
+    <div class="step"><i class="fas fa-handshake"></i> 4. Coordinate with ZAV/AMS & employers</div>
+    <div class="step"><i class="fas fa-passport"></i> 5. Visa & relocation support</div>
+  </div>
+
+  <!-- compliance statement -->
+  <div class="compliance">
+    <i class="fas fa-file-contract" style="font-size:2.5rem; float:left; margin-right:1.5rem; color:#024e68;"></i>
+    <h3 style="color: #03506f; margin-bottom: 0.5rem;">📌 Compliance statement</h3>
+    <p style="font-size: 1.05rem;">All candidates must provide original certificates, official transcripts, verification of institutional accreditation at the time of training, and certified translations. <strong>Final recognition decisions rest solely with the competent authority in the destination country.</strong></p>
+  </div>
+
+  <!-- footer / contact -->
+  <div class="footer">
+    <div>
+      <i class="fas fa-globe" style="margin-right: 12px;"></i> <strong>EUKEN Nurse Bridge</strong> – your partner for ethical recruitment
+    </div>
+    <div class="contact">
+      <i class="fas fa-envelope"></i> partners@eukenbridge.eu  |  
+      <i class="fas fa-phone-alt"></i> +43 660 1234567  (AT)  /  +254 700 123456 (KE)
+    </div>
+    <div style="font-size:0.9rem; opacity:0.9;">
+      <i class="fas fa-file-pdf"></i> based on official proposal documents
+    </div>
+  </div>
+
+  <!-- tiny spacer note for authorities completeness -->
+  <hr>
+  <p style="text-align: center; color: #346b7f;"><i class="fas fa-check-double"></i> We support recruitment partners, nursing councils, and individual applicants through every step — from translation to recognition and placement.</p>
+
+</div> <!-- container -->
 </body>
 </html>
